@@ -1,0 +1,14 @@
+.git
+target
+.idea
+.vscode
+.settings
+*.iml
+*.class
+*.jar
+*.log
+*.tmp
+*.pid
+.env
+.env.*
+HELP.md

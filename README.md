@@ -116,5 +116,17 @@ intentional production asset.
 
 ## Deployment
 
-Deployment is pending. This repository does not claim a live production URL,
-domain, CI/CD pipeline or hosting provider.
+Deployment to a Render Web Service is prepared but remains pending until the
+service is created. The service uses the repository-root `Dockerfile`, the
+`main` branch and the `prod` Spring profile. Render supplies the application
+port through its `PORT` environment variable; local production runs fall back
+to port 8080.
+
+Required Render environment variable:
+
+```text
+SPRING_PROFILES_ACTIVE=prod
+```
+
+No live URL, custom domain, CI/CD pipeline or persistent service is claimed
+until the Render deployment succeeds.
