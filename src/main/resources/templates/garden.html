@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Digital garden notes from Okeydokey on AI, computer vision, databases, web UI and ongoing experiments.">
+    <meta property="og:site_name" content="OKEYDOKEY.SPACE">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Digital Garden — OKEYDOKEY.SPACE">
+    <meta property="og:description" content="Digital garden notes from Okeydokey on AI, computer vision, databases, web UI and ongoing experiments.">
+    <title>Digital Garden — OKEYDOKEY.SPACE</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/garden.css">
+</head>
+<body id="top" class="site-shell">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div th:replace="~{fragments/header :: siteHeader}"></div>
+
+    <main id="main-content" class="site-main garden-page">
+        <header class="garden-page__intro">
+            <div class="site-container garden-page__intro-grid">
+                <div>
+                    <span class="pixel-label">[ DIGITAL_GARDEN ]</span>
+                    <h1 class="garden-page__title">IDEAS<br>IN PROGRESS.</h1>
+                </div>
+                <div class="garden-page__intro-copy">
+                    <p>A collection of notes, experiments<br>and things I'm learning as I build.</p>
+                    <p class="garden-meta">LAST_WATERED: <strong>RECENTLY_</strong></p>
+                </div>
+            </div>
+        </header>
+
+        <section class="garden-page__collection" aria-labelledby="garden-collection-title">
+            <div class="site-container">
+                <header class="garden-page__collection-header">
+                    <span class="pixel-label">[ 03 GROWING_NOTES ]</span>
+                    <h2 id="garden-collection-title">THE_GARDEN_</h2>
+                </header>
+
+                <div th:replace="~{fragments/garden-grid :: gardenGrid(${gardenEntries}, ${relatedProjects}, true)}"></div>
+
+                <div class="garden-page__action">
+                    <a class="pixel-button pixel-button--secondary" href="/projects">
+                        EXPLORE_PROJECTS <span aria-hidden="true">&rarr;</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div th:replace="~{fragments/footer :: siteFooter}"></div>
+    <script src="/js/main.js"></script>
+</body>
+</html>

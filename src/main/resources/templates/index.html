@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal portfolio of Okeydokey, a computer science student building web applications, AI and computer vision projects, database systems and interactive experiments.">
+    <meta property="og:site_name" content="OKEYDOKEY.SPACE">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="OKEYDOKEY.SPACE — Student Developer Portfolio">
+    <meta property="og:description" content="Personal portfolio of Okeydokey, a computer science student building web applications, AI and computer vision projects, database systems and interactive experiments.">
+    <title>OKEYDOKEY.SPACE — Student Developer Portfolio</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/journey.css">
+    <link rel="stylesheet" href="/css/garden.css">
+    <link rel="stylesheet" href="/css/playground.css">
+</head>
+<body id="top" class="site-shell">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div th:replace="~{fragments/header :: siteHeader}"></div>
+
+    <main id="main-content" class="site-main">
+        <section id="home" class="hero" aria-labelledby="hero-title">
+            <div class="site-container">
+                <span class="pixel-label hero__label">[ 01 / HOME ]</span>
+
+                <div class="hero__grid">
+                    <div class="hero__content">
+                        <p class="hero__eyebrow">Hello, I'm</p>
+                        <h1 id="hero-title" class="hero__title">
+                            <span class="hero__title-prefix">I'm</span>
+                            <span class="hero__title-name">Okeydokey.</span>
+                        </h1>
+                        <p class="hero__headline">Student • Developer • Builder</p>
+                        <p class="hero__intro">
+                            I build things with code,<br>
+                            explore AI, work with modern web technologies<br>
+                            and experiment with ideas.
+                        </p>
+                        <div class="hero__actions">
+                            <a class="pixel-button" href="#projects">
+                                Explore my work <span aria-hidden="true">↓</span>
+                            </a>
+                            <a class="hero__github" href="https://github.com/Okeydokey8525"
+                               target="_blank" rel="noopener noreferrer"
+                               aria-label="Visit Okeydokey on GitHub (opens in a new tab)">
+                                GitHub <span aria-hidden="true">↗</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="hero__media">
+                        <div class="hero-profile pixel-window">
+                            <div class="pixel-window__bar">
+                                <span>[ PROFILE.JPG ]</span>
+                                <span>Portrait_loaded_</span>
+                            </div>
+                            <div class="pixel-window__content">
+                                <div class="hero-profile__portrait">
+                                    <img class="hero-profile__image hero-profile__image--original"
+                                         src="/images/profile/okeydokey-profile.jpg"
+                                         width="651" height="869"
+                                         alt="Portrait of Okeydokey"
+                                         decoding="async">
+                                    <img class="hero-profile__image hero-profile__image--treated"
+                                         src="/images/profile/okeydokey-profile.jpg"
+                                         width="651" height="869"
+                                         alt="" aria-hidden="true"
+                                         decoding="async">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about" aria-labelledby="about-title">
+            <div class="site-container">
+                <header class="about__header">
+                    <div>
+                        <span class="pixel-label">[ 02 / ABOUT_ME ]</span>
+                        <h2 id="about-title" class="about__title">
+                            A little about<br>
+                            what I build<br>
+                            and learn.
+                        </h2>
+                    </div>
+                    <p class="about__subcopy">
+                        A growing collection of skills, experiments<br>
+                        and things I've learned by building.
+                    </p>
+                </header>
+
+                <div class="about-bento">
+                    <article class="about-card about-card--who pixel-card pixel-card--featured">
+                        <h3 class="about-card__title">WHO_AM_I_</h3>
+                        <div class="about-card__copy">
+                            <p class="about-card__lead">Hi, I'm Okeydokey.</p>
+                            <p>I'm a computer science student who enjoys building web applications,
+                                exploring AI and computer vision, working with databases,
+                                and turning ideas into working software.</p>
+                            <p>I learn best by building, breaking, fixing and improving things.</p>
+                        </div>
+                    </article>
+
+                    <article class="about-card about-card--signature pixel-card pixel-card--green pixel-card--featured">
+                        <h3 class="about-signature">
+                            <span>Learn</span>
+                            <span class="about-signature__arrow" aria-hidden="true">↓</span>
+                            <span>Build</span>
+                            <span class="about-signature__arrow" aria-hidden="true">↓</span>
+                            <span>Share</span>
+                            <span class="about-signature__arrow" aria-hidden="true">↓</span>
+                            <span>Repeat</span>
+                        </h3>
+                    </article>
+
+                    <article class="about-card about-card--primary pixel-card pixel-card--soft">
+                        <h3 class="about-card__title">PRIMARY_STACK_</h3>
+                        <div class="about-badges" role="group" aria-label="Primary technology stack">
+                            <span class="pixel-badge pixel-badge--green">[ Java ]</span>
+                            <span class="pixel-badge">[ Python ]</span>
+                            <span class="pixel-badge">[ SQL ]</span>
+                            <span class="pixel-badge">[ NoSQL ]</span>
+                        </div>
+                    </article>
+
+                    <article class="about-card about-card--tools pixel-card pixel-card--soft">
+                        <h3 class="about-card__title">TOOLS_I_WORK_WITH_</h3>
+                        <ul class="about-tools">
+                            <li>Spring Boot</li>
+                            <li>FastAPI</li>
+                            <li>MySQL</li>
+                            <li>MongoDB</li>
+                            <li>Redis</li>
+                            <li>Flutter</li>
+                        </ul>
+                    </article>
+
+                    <article class="about-card about-card--exploring pixel-card pixel-card--small">
+                        <h3 class="about-card__title">CURRENTLY_EXPLORING_</h3>
+                        <span class="status-indicator status-indicator--current">● Current</span>
+                        <ul class="about-list">
+                            <li>AI / Computer Vision</li>
+                            <li>Web Development</li>
+                            <li>Database Systems</li>
+                        </ul>
+                    </article>
+
+                    <article class="about-card about-card--build pixel-card pixel-card--small">
+                        <h3 class="about-card__title">BUILD_MODE_</h3>
+                        <ol class="build-mode">
+                            <li><span>01</span> Build</li>
+                            <li><span>02</span> Break</li>
+                            <li><span>03</span> Fix</li>
+                            <li><span>04</span> Improve</li>
+                            <li><span>05</span> Repeat</li>
+                        </ol>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects-section" aria-labelledby="projects-title">
+            <div class="site-container">
+                <header class="projects-section__header">
+                    <div>
+                        <span class="pixel-label">[ 03 / PROJECTS ]</span>
+                        <h2 id="projects-title" class="projects-section__title">
+                            Selected<br>
+                            work.
+                        </h2>
+                    </div>
+                    <p class="projects-section__intro">
+                        A few things I've built while learning,<br>
+                        experimenting and solving real problems.
+                    </p>
+                </header>
+
+                <div class="projects-grid">
+                    <article class="project-card pixel-card"
+                             th:each="project, projectStat : ${projects}"
+                             th:classappend="${project.featured} ? ' project-card--featured pixel-card--featured' : ''">
+                        <div class="project-card__visual" aria-hidden="true">
+                            <span th:text="${#numbers.formatInteger(projectStat.count, 2)}">01</span>
+                        </div>
+
+                        <div class="project-card__content">
+                            <span class="status-indicator project-card__status">
+                                <span aria-hidden="true">&#9679;</span>
+                                <span th:text="${project.status}">STATUS</span>
+                            </span>
+
+                            <h3 class="project-card__title" th:text="${project.title}">PROJECT_TITLE_</h3>
+                            <p class="project-card__description" th:text="${project.description}">
+                                Project description.
+                            </p>
+
+                            <dl class="project-card__metadata">
+                                <div>
+                                    <dt>ROLE_</dt>
+                                    <dd th:text="${project.role}">Project role</dd>
+                                </div>
+                                <div>
+                                    <dt>FOCUS_</dt>
+                                    <dd th:text="${project.focus}">Project focus</dd>
+                                </div>
+                            </dl>
+
+                            <ul class="project-card__technologies" aria-label="Technologies">
+                                <li th:each="technology : ${project.technologies}">
+                                    <span class="pixel-badge" th:text="${technology}">Technology</span>
+                                </li>
+                            </ul>
+
+                            <div class="project-card__action">
+                                <a class="pixel-button pixel-button--secondary"
+                                   th:if="${project.hasPublicRepository()}"
+                                   th:href="${project.repositoryUrl}"
+                                   th:aria-label="|View repository for ${project.title} (opens in a new tab)|"
+                                   target="_blank" rel="noopener noreferrer">
+                                    View_repository <span aria-hidden="true">&#8599;</span>
+                                </a>
+                                <span class="project-card__private"
+                                      th:if="${!project.hasPublicRepository() and project.privateRepository}">
+                                    Private_repository_
+                                </span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="projects-section__more">
+                    <a class="pixel-button pixel-button--secondary" href="/projects">
+                        View_all_projects <span aria-hidden="true">&rarr;</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="journey" class="journey-section" aria-labelledby="journey-title">
+            <div class="site-container">
+                <header class="journey-section__header">
+                    <div>
+                        <span class="pixel-label">[ 04 / JOURNEY ]</span>
+                        <h2 id="journey-title" class="journey-section__title">
+                            MY LEARNING<br>
+                            JOURNEY.
+                        </h2>
+                    </div>
+                    <p class="journey-section__copy">
+                        A path through the things I've learned,<br>
+                        built and explored along the way.
+                    </p>
+                </header>
+
+                <div th:replace="~{fragments/journey-map :: journeyMap(${journeyNodes})}"></div>
+
+                <div class="journey-section__action">
+                    <a class="pixel-button" href="/journey">
+                        VIEW_FULL_JOURNEY <span aria-hidden="true">&rarr;</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="garden" class="garden-section" aria-labelledby="garden-title">
+            <div class="site-container">
+                <header class="garden-section__header">
+                    <div>
+                        <span class="pixel-label">[ 05 / GARDEN ]</span>
+                        <h2 id="garden-title" class="garden-section__title">
+                            DIGITAL<br>
+                            GARDEN_
+                        </h2>
+                    </div>
+                    <div>
+                        <p class="garden-section__copy">
+                            Notes, ideas and experiments<br>
+                            that are still growing.
+                        </p>
+                        <p class="garden-meta">LAST_WATERED: <strong>RECENTLY_</strong></p>
+                    </div>
+                </header>
+
+                <div th:replace="~{fragments/garden-grid :: gardenGrid(${gardenEntries}, ${gardenRelatedProjects}, false)}"></div>
+
+                <div class="garden-section__action">
+                    <a class="pixel-button pixel-button--secondary" href="/garden">
+                        EXPLORE_THE_GARDEN <span aria-hidden="true">&rarr;</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="playground" class="playground-section" aria-labelledby="playground-title">
+            <div class="site-container">
+                <header class="playground-section__header">
+                    <div>
+                        <span class="pixel-label">[ 06 / PLAYGROUND ]</span>
+                        <h2 id="playground-title" class="playground-section__title">
+                            SMALL<br>
+                            EXPERIMENTS_
+                        </h2>
+                    </div>
+                    <p class="playground-section__copy">
+                        A place for small interactions,<br>
+                        visual ideas and things I build just to see what happens.
+                    </p>
+                </header>
+
+                <div class="playground-preview">
+                    <article class="playground-preview__card playground-preview__card--stable pixel-card">
+                        <div>
+                            <div class="playground-preview__meta">
+                                <span class="pixel-label">LAB_001</span>
+                                <span class="status-indicator status-indicator--active">
+                                    <span aria-hidden="true">&#9679;</span> STABLE
+                                </span>
+                            </div>
+                            <h3 class="playground-preview__title">PIXEL_BRUSH_</h3>
+                            <p class="playground-preview__copy">Draw a tiny pixel trail with your pointer.</p>
+                        </div>
+                        <div class="playground-preview__visual playground-preview__visual--brush" aria-hidden="true"></div>
+                    </article>
+
+                    <article class="playground-preview__card playground-preview__card--experimental pixel-card">
+                        <div>
+                            <div class="playground-preview__meta">
+                                <span class="pixel-label">LAB_002</span>
+                                <span class="status-indicator status-indicator--experimental">
+                                    <span aria-hidden="true">&#9671;</span> EXPERIMENTAL
+                                </span>
+                            </div>
+                            <h3 class="playground-preview__title">DITHER_MACHINE_</h3>
+                            <p class="playground-preview__copy">Explore a lightweight green-and-black dither pattern.</p>
+                        </div>
+                        <div class="playground-preview__visual playground-preview__visual--dither" aria-hidden="true"></div>
+                    </article>
+                </div>
+
+                <div class="playground-section__action">
+                    <a class="pixel-button" href="/playground">
+                        ENTER_PLAYGROUND <span aria-hidden="true">&rarr;</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section" aria-labelledby="contact-title">
+            <div class="site-container">
+                <header class="contact-section__header">
+                    <div>
+                        <span class="pixel-label">[ 07 / CONTACT ]</span>
+                        <h2 id="contact-title" class="contact-section__title">
+                            LET'S<br>
+                            CONNECT_
+                        </h2>
+                    </div>
+                    <p class="contact-section__copy">
+                        Have an idea, project or just want to say hello?<br>
+                        You can find me here.
+                    </p>
+                </header>
+
+                <div class="contact-grid">
+                    <article class="contact-card contact-card--email pixel-card">
+                        <p class="contact-card__label">EMAIL_ME_</p>
+                        <a class="contact-card__email" href="mailto:leducluong.08052005@gmail.com">
+                            leducluong.08052005@gmail.com
+                        </a>
+                        <div class="contact-card__actions">
+                            <a class="pixel-button" href="mailto:leducluong.08052005@gmail.com">
+                                SEND_EMAIL <span aria-hidden="true">&#8599;</span>
+                            </a>
+                            <button class="pixel-button pixel-button--secondary" type="button"
+                                    data-copy-email data-email="leducluong.08052005@gmail.com">
+                                COPY_EMAIL
+                            </button>
+                        </div>
+                        <p class="contact-card__feedback" aria-live="polite" data-copy-email-feedback></p>
+                    </article>
+
+                    <div class="contact-socials">
+                        <article class="contact-card contact-card--social pixel-card">
+                            <p class="contact-card__label">GITHUB_</p>
+                            <h3 class="contact-card__title">@Okeydokey8525</h3>
+                            <p class="contact-card__description">Code, experiments and projects.</p>
+                            <a class="contact-card__link" href="https://github.com/Okeydokey8525"
+                               aria-label="Open GitHub profile (opens in a new tab)"
+                               target="_blank" rel="noopener noreferrer">
+                                OPEN_GITHUB <span aria-hidden="true">&#8599;</span>
+                            </a>
+                        </article>
+
+                        <article class="contact-card contact-card--social pixel-card">
+                            <p class="contact-card__label">LINKEDIN_</p>
+                            <h3 class="contact-card__title">L&#202; &#272;&#7912;C L&#431;&#416;NG</h3>
+                            <p class="contact-card__description">Profile and professional connections.</p>
+                            <a class="contact-card__link"
+                               href="https://www.linkedin.com/in/l%C3%AA-%C4%91%E1%BB%A9c-l%C6%B0%C6%A1ng-66874a420/"
+                               aria-label="Open LinkedIn profile (opens in a new tab)"
+                               target="_blank" rel="noopener noreferrer">
+                                OPEN_LINKEDIN <span aria-hidden="true">&#8599;</span>
+                            </a>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div th:replace="~{fragments/footer :: siteFooter}"></div>
+    <script src="/js/main.js"></script>
+    <script src="/js/contact.js" defer></script>
+</body>
+</html>

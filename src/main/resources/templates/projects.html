@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Selected software projects by Okeydokey across AI, web development, databases and mobile development.">
+    <meta property="og:site_name" content="OKEYDOKEY.SPACE">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Projects — OKEYDOKEY.SPACE">
+    <meta property="og:description" content="Selected software projects by Okeydokey across AI, web development, databases and mobile development.">
+    <title>Projects — OKEYDOKEY.SPACE</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/projects.css">
+</head>
+<body id="top" class="site-shell projects-page-shell">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div th:replace="~{fragments/header :: siteHeader}"></div>
+
+    <main id="main-content" class="site-main projects-page">
+        <header class="projects-page__hero">
+            <div class="site-container projects-page__hero-grid">
+                <div>
+                    <span class="pixel-label">[ PROJECT_ARCHIVE ]</span>
+                    <h1 class="projects-page__title">
+                        Things<br>
+                        I've built.
+                    </h1>
+                </div>
+                <div class="projects-page__summary">
+                    <p>
+                        Projects, experiments and applications<br>
+                        I've built while learning and exploring different technologies.
+                    </p>
+                    <p class="projects-page__count">
+                        <span th:text="${#numbers.formatInteger(#lists.size(projects), 2)}">00</span>
+                        projects_
+                    </p>
+                </div>
+            </div>
+        </header>
+
+        <section class="project-archive" aria-labelledby="project-archive-title"
+                 data-project-archive>
+            <div class="site-container">
+                <h2 id="project-archive-title" class="project-archive__title">PROJECT_ARCHIVE_</h2>
+
+                <div class="project-archive__controls">
+                    <div class="project-filter" role="group" aria-label="Filter projects">
+                        <button class="project-filter__button" type="button"
+                                data-project-filter="ALL" aria-pressed="true">[ ALL ]</button>
+                        <button class="project-filter__button" type="button"
+                                data-project-filter="WEB" aria-pressed="false">[ WEB ]</button>
+                        <button class="project-filter__button" type="button"
+                                data-project-filter="AI_ML" aria-pressed="false">[ AI / ML ]</button>
+                        <button class="project-filter__button" type="button"
+                                data-project-filter="DATABASE" aria-pressed="false">[ DATABASE ]</button>
+                        <button class="project-filter__button" type="button"
+                                data-project-filter="MOBILE" aria-pressed="false">[ MOBILE ]</button>
+                        <button class="project-filter__button" type="button"
+                                data-project-filter="GAME" aria-pressed="false">[ GAME ]</button>
+                    </div>
+
+                    <p class="project-archive__result" aria-live="polite" aria-atomic="true">
+                        Showing
+                        <span data-visible-count th:text="${#lists.size(projects)}">0</span>
+                        /
+                        <span data-total-count th:text="${#lists.size(projects)}">0</span>_
+                    </p>
+                </div>
+
+                <div class="project-archive__grid">
+                    <article class="archive-card pixel-card"
+                             th:each="project, projectStat : ${projects}"
+                             th:id="|project-${project.id}|"
+                             th:attr="data-categories=${#strings.listJoin(project.categories, ' ')}"
+                             data-project-card>
+                        <div class="archive-card__top">
+                            <span class="archive-card__number" aria-hidden="true"
+                                  th:text="${#numbers.formatInteger(projectStat.count, 2)}">01</span>
+                            <div class="archive-card__markers">
+                                <span class="pixel-label archive-card__featured"
+                                      th:if="${project.featured}">FEATURED_</span>
+                                <span class="status-indicator">
+                                    <span aria-hidden="true">&#9679;</span>
+                                    <span th:text="${project.status}">STATUS</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="archive-card__content">
+                            <h3 class="archive-card__title" th:text="${project.title}">PROJECT_TITLE_</h3>
+                            <p class="archive-card__description" th:text="${project.description}">
+                                Project description.
+                            </p>
+
+                            <dl class="archive-card__metadata">
+                                <div>
+                                    <dt>ROLE_</dt>
+                                    <dd th:text="${project.role}">Project role</dd>
+                                </div>
+                                <div>
+                                    <dt>FOCUS_</dt>
+                                    <dd th:text="${project.focus}">Project focus</dd>
+                                </div>
+                            </dl>
+
+                            <ul class="archive-card__technologies" aria-label="Technologies">
+                                <li th:each="technology : ${project.technologies}">
+                                    <span class="pixel-badge" th:text="${technology}">Technology</span>
+                                </li>
+                            </ul>
+
+                            <ul class="archive-card__categories" aria-label="Project categories">
+                                <li th:each="category : ${project.categories}"
+                                    th:text="${category}">CATEGORY</li>
+                            </ul>
+
+                            <div class="archive-card__action">
+                                <a class="pixel-button pixel-button--secondary"
+                                   th:if="${project.hasPublicRepository()}"
+                                   th:href="${project.repositoryUrl}"
+                                   th:aria-label="|View repository for ${project.title} (opens in a new tab)|"
+                                   target="_blank" rel="noopener noreferrer">
+                                    View_repository <span aria-hidden="true">&#8599;</span>
+                                </a>
+                                <span class="archive-card__private"
+                                      th:if="${!project.hasPublicRepository() and project.privateRepository}">
+                                    Private_repository_
+                                </span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="project-archive__empty pixel-card" data-project-empty hidden>
+                    <h3>NO_PROJECTS_HERE_YET_</h3>
+                    <p>This area is still growing.</p>
+                    <button class="pixel-button pixel-button--secondary" type="button"
+                            data-project-reset>[ RETURN_TO_ALL ]</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div th:replace="~{fragments/footer :: siteFooter}"></div>
+    <script src="/js/main.js"></script>
+    <script src="/js/projects.js" defer></script>
+</body>
+</html>

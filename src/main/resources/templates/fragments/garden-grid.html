@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+    <div th:fragment="gardenGrid(entries, relatedProjects, fullMode)"
+         class="garden-grid"
+         th:classappend="${fullMode} ? ' garden-grid--full' : ' garden-grid--compact'">
+        <article class="garden-card pixel-card"
+                 th:each="entry : ${entries}"
+                 th:classappend="${entry.featured} ? ' garden-card--featured' : (${entry.isSeed()} ? ' garden-card--seed' : ' garden-card--growing')"
+                 th:attr="data-garden-id=${entry.id},data-garden-status=${entry.status}">
+            <header class="garden-card__header">
+                <span class="status-indicator garden-card__status" th:if="${entry.isGrowing()}">
+                    <span aria-hidden="true">&#9680;</span> <span th:text="${entry.status}">GROWING</span>
+                </span>
+                <span class="status-indicator garden-card__status garden-card__status--seed" th:if="${entry.isSeed()}">
+                    <span aria-hidden="true">&#9671;</span> <span th:text="${entry.status}">SEED</span>
+                </span>
+                <span class="garden-card__sprout" aria-hidden="true">+ +</span>
+            </header>
+
+            <h3 class="garden-card__title" th:text="${entry.title}">GARDEN_ENTRY_</h3>
+            <p class="garden-card__excerpt" th:text="${entry.excerpt}">Garden entry excerpt.</p>
+
+            <ul class="garden-card__tags">
+                <li th:each="tag : ${entry.tags}">
+                    <span class="pixel-badge garden-card__tag" th:text="${tag}">Tag</span>
+                </li>
+            </ul>
+
+            <div class="garden-card__topics-block">
+                <p class="garden-card__label">TOPICS_</p>
+                <ul class="garden-card__topics">
+                    <li th:each="topic : ${entry.topics}">
+                        <span aria-hidden="true">&rarr;</span>
+                        <span th:text="${topic}">Topic</span>
+                    </li>
+                </ul>
+            </div>
+
+            <footer class="garden-card__footer">
+                <p class="garden-card__watered">
+                    <span>LAST_WATERED:</span>
+                    <strong th:text="${entry.lastWatered}">RECENTLY_</strong>
+                </p>
+
+                <th:block th:if="${entry.hasRelatedProject()}"
+                          th:with="relatedProject=${relatedProjects.get(entry.id)}">
+                    <div class="garden-card__related" th:if="${relatedProject != null}">
+                        <span>RELATED_PROJECT_</span>
+                        <a th:href="|/projects#project-${relatedProject.id}|"
+                           th:text="|${relatedProject.title} &#8594;|">PROJECT_ &#8594;</a>
+                    </div>
+                </th:block>
+            </footer>
+        </article>
+    </div>
+</body>
+</html>

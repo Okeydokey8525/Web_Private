@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Okeydokey's learning journey through computer science, web development, databases, Java, Flutter and AI/computer vision.">
+    <meta property="og:site_name" content="OKEYDOKEY.SPACE">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Journey — OKEYDOKEY.SPACE">
+    <meta property="og:description" content="Okeydokey's learning journey through computer science, web development, databases, Java, Flutter and AI/computer vision.">
+    <title>Journey — OKEYDOKEY.SPACE</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/journey.css">
+</head>
+<body id="top" class="site-shell">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div th:replace="~{fragments/header :: siteHeader}"></div>
+
+    <main id="main-content" class="site-main journey-page">
+        <header class="journey-page__intro">
+            <div class="site-container">
+                <span class="pixel-label">[ LEARNING_JOURNEY ]</span>
+                <h1 class="journey-page__title">
+                    LEARNING,<br>
+                    BUILDING,<br>
+                    EXPLORING.
+                </h1>
+                <p class="journey-page__copy">
+                    A growing map of what I've learned,<br>
+                    what I've built and where I'm exploring next.
+                </p>
+            </div>
+        </header>
+
+        <section class="journey-page__map" aria-labelledby="journey-map-title">
+            <div class="site-container">
+                <div class="journey-page__map-header">
+                    <span class="pixel-label">[ 11 CHECKPOINTS ]</span>
+                    <h2 id="journey-map-title">LEARNING_ROUTE_</h2>
+                </div>
+                <div th:replace="~{fragments/journey-map :: journeyMap(${journeyNodes})}"></div>
+                <div class="journey-page__action">
+                    <a class="pixel-button pixel-button--secondary" href="/">
+                        BACK_TO_HOME <span aria-hidden="true">&larr;</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div th:replace="~{fragments/footer :: siteFooter}"></div>
+    <script src="/js/main.js"></script>
+</body>
+</html>

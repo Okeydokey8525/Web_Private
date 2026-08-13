@@ -1,0 +1,353 @@
+.playground-section {
+    padding-block: var(--space-9);
+    overflow: hidden;
+    color: var(--color-bg);
+    background: var(--color-text);
+    border-top: var(--border);
+}
+
+.playground-section__header,
+.playground-page__intro-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.8fr);
+    gap: var(--space-7);
+    align-items: end;
+}
+
+.playground-section__header {
+    margin-block-end: var(--space-8);
+}
+
+.playground-section__title,
+.playground-page__title {
+    margin-block: var(--space-4) 0;
+    font-family: var(--font-display);
+    font-size: var(--font-size-section);
+    line-height: 0.95;
+    text-transform: uppercase;
+}
+
+.playground-section__copy,
+.playground-page__copy {
+    margin: 0;
+    font-size: var(--font-size-body);
+    line-height: 1.7;
+}
+
+.playground-section .pixel-label {
+    color: var(--color-green-300);
+}
+
+.playground-preview {
+    display: grid;
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+    gap: var(--space-6);
+}
+
+.playground-preview__card {
+    display: grid;
+    min-width: 0;
+    grid-template-columns: minmax(0, 1fr) minmax(8rem, 0.55fr);
+    gap: var(--space-5);
+    color: var(--color-text);
+    background: var(--color-bg);
+}
+
+.playground-preview__card--stable {
+    border-width: 3px;
+    box-shadow: 8px 8px 0 var(--color-green-500);
+}
+
+.playground-preview__card--experimental {
+    grid-template-columns: minmax(0, 1fr);
+    border-style: dashed;
+    box-shadow: var(--shadow-small);
+}
+
+.playground-preview__meta,
+.playground-lab__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    align-items: center;
+    justify-content: space-between;
+}
+
+.playground-preview__title {
+    margin-block: var(--space-5) var(--space-3);
+    font-family: var(--font-display);
+    font-size: var(--font-size-card);
+}
+
+.playground-preview__copy {
+    margin: 0;
+}
+
+.playground-preview__visual {
+    min-width: 0;
+    min-height: 10rem;
+    border: var(--border);
+}
+
+.playground-preview__visual--brush {
+    background-color: var(--color-bg-soft);
+    background-image:
+        linear-gradient(var(--color-green-100) 1px, transparent 1px),
+        linear-gradient(90deg, var(--color-green-100) 1px, transparent 1px),
+        linear-gradient(90deg,
+            transparent 0 18%,
+            var(--color-green-500) 18% 28%,
+            transparent 28% 38%,
+            var(--color-green-500) 38% 48%,
+            transparent 48% 58%,
+            var(--color-green-500) 58% 68%,
+            transparent 68%);
+    background-size: 12px 12px, 12px 12px, 100% 36px;
+    background-position: 0 0, 0 0, center;
+}
+
+.playground-preview__visual--dither,
+.dither-machine__output {
+    --dither-density: 10%;
+    --dither-scale: 20px;
+    background-color: var(--color-text);
+    background-image: repeating-conic-gradient(
+        from 45deg,
+        var(--color-green-500) 0 var(--dither-density),
+        var(--color-bg) var(--dither-density) 25%,
+        var(--color-text) 25% 50%
+    );
+    background-size: var(--dither-scale) var(--dither-scale);
+}
+
+.playground-section__action {
+    display: flex;
+    justify-content: center;
+    margin-block-start: var(--space-8);
+}
+
+.playground-section__action .pixel-button {
+    background: var(--color-bg);
+    box-shadow: 6px 6px 0 var(--color-green-500);
+}
+
+.playground-page {
+    background: var(--color-bg-soft);
+}
+
+.playground-page__intro {
+    padding-block: var(--space-8);
+    background: var(--color-bg);
+    border-bottom: var(--border);
+}
+
+.playground-page__title {
+    font-size: var(--font-size-display);
+}
+
+.playground-page__copy > p {
+    margin-block-end: var(--space-5);
+}
+
+.playground-page__count {
+    display: inline-block;
+    padding: var(--space-3) var(--space-4);
+    font-family: var(--font-display);
+    font-size: var(--font-size-small);
+    font-weight: 700;
+    background: var(--color-green-100);
+    border: var(--border);
+}
+
+.playground-page__labs {
+    padding-block: var(--space-9);
+}
+
+.playground-page__labs .site-container {
+    display: grid;
+    gap: var(--space-8);
+}
+
+.playground-lab {
+    display: grid;
+    grid-template-columns: minmax(16rem, 0.65fr) minmax(0, 1.35fr);
+    gap: var(--space-7);
+    padding: var(--space-6);
+    scroll-margin-top: 6rem;
+}
+
+.playground-lab--brush {
+    border-width: 3px;
+    box-shadow: var(--shadow-featured);
+}
+
+.playground-lab--dither {
+    background: var(--color-green-100);
+}
+
+.playground-lab__content {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.playground-lab__meta {
+    width: 100%;
+}
+
+.playground-lab__title {
+    margin-block: var(--space-6) var(--space-4);
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 4vw, 3rem);
+    overflow-wrap: anywhere;
+}
+
+.playground-lab__description {
+    max-width: 36rem;
+    line-height: 1.65;
+}
+
+.playground-lab__instruction {
+    margin-block: var(--space-5);
+    font-family: var(--font-display);
+    font-size: var(--font-size-ui);
+    font-weight: 700;
+}
+
+.pixel-brush {
+    min-width: 0;
+    padding: var(--space-3);
+    background: var(--color-text);
+    border: var(--border);
+}
+
+.pixel-brush__canvas {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-color: var(--color-bg);
+    background-image:
+        linear-gradient(var(--color-green-100) 1px, transparent 1px),
+        linear-gradient(90deg, var(--color-green-100) 1px, transparent 1px);
+    background-size: 12px 12px;
+    cursor: crosshair;
+    touch-action: none;
+}
+
+.dither-machine__controls {
+    display: grid;
+    width: 100%;
+    gap: var(--space-5);
+    margin-block-start: var(--space-5);
+}
+
+.dither-machine__control {
+    display: grid;
+    gap: var(--space-3);
+}
+
+.dither-machine__control-label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    font-family: var(--font-display);
+    font-size: var(--font-size-ui);
+    font-weight: 700;
+}
+
+.dither-machine__control output {
+    min-width: 2.75rem;
+    padding: var(--space-1) var(--space-2);
+    background: var(--color-bg);
+    border: var(--border);
+    text-align: center;
+}
+
+.dither-machine__control input[type="range"] {
+    width: 100%;
+    min-height: 2.75rem;
+    accent-color: var(--color-green-600);
+    cursor: pointer;
+}
+
+.dither-machine__output {
+    min-width: 0;
+    aspect-ratio: 16 / 9;
+    border: var(--border);
+    box-shadow: var(--shadow-small);
+}
+
+@media (min-width: 48rem) and (max-width: 63.9375rem) {
+    .playground-section,
+    .playground-page__labs {
+        padding-block: var(--space-8);
+    }
+
+    .playground-section__header,
+    .playground-page__intro-grid,
+    .playground-lab {
+        grid-template-columns: minmax(0, 1fr);
+        gap: var(--space-5);
+    }
+
+    .playground-preview {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--space-5);
+    }
+
+    .playground-preview__card {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 47.9375rem) {
+    .playground-section,
+    .playground-page__intro,
+    .playground-page__labs {
+        padding-block: var(--space-8);
+    }
+
+    .playground-section__header,
+    .playground-page__intro-grid,
+    .playground-preview,
+    .playground-preview__card,
+    .playground-lab {
+        grid-template-columns: minmax(0, 1fr);
+        gap: var(--space-5);
+    }
+
+    .playground-section__header {
+        margin-block-end: var(--space-7);
+    }
+
+    .playground-section__copy br,
+    .playground-page__copy br {
+        display: none;
+    }
+
+    .playground-lab {
+        padding: var(--space-5);
+    }
+
+    .pixel-brush__canvas,
+    .dither-machine__output {
+        aspect-ratio: 4 / 3;
+    }
+
+    .playground-lab__content .pixel-button,
+    .playground-section__action .pixel-button {
+        width: 100%;
+    }
+
+    .playground-preview__visual {
+        min-height: 8rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .dither-machine__output {
+        transition: none;
+    }
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+    <div th:fragment="journeyMap(journeyNodes)" class="journey-map">
+        <ol class="journey-map__list" aria-label="Learning journey progression">
+            <li class="journey-map__item"
+                th:each="node : ${journeyNodes}"
+                th:classappend="${node.compact()} ? ' journey-map__item--compact' : ''"
+                th:attr="data-node-id=${node.id},data-node-kind=${node.kind},data-parent-id=${node.parentId},data-node-order=${node.order},data-compact=${node.compact},aria-current=${node.isCurrent()} ? 'step' : null">
+                <article class="journey-node pixel-card">
+                    <div class="journey-node__meta">
+                        <span class="journey-node__index"
+                              th:text="${#numbers.formatInteger(node.order, 2)}">01</span>
+                        <span class="journey-node__year pixel-label"
+                              th:if="${node.hasYear()}"
+                              th:text="${node.year}">2023</span>
+                        <span class="journey-node__kind" th:if="${node.isGroup()}">BRANCH_HUB_</span>
+                        <span class="journey-node__kind" th:if="${node.isBranch()}">
+                            BRANCH_FROM_BUILDING_MORE_
+                        </span>
+                        <span class="journey-node__kind"
+                              th:if="${!node.isGroup() and !node.isBranch() and !node.isCurrent() and !node.isNext()}">MILESTONE_</span>
+                        <span class="status-indicator journey-node__status"
+                              th:if="${node.isCurrent()}"><span aria-hidden="true">&#9679;</span> CURRENT</span>
+                        <span class="status-indicator journey-node__status"
+                              th:if="${node.isNext()}"><span aria-hidden="true">&#9671;</span> NEXT</span>
+                    </div>
+                    <h3 class="journey-node__title" th:text="${node.title}">JOURNEY_NODE_</h3>
+                </article>
+            </li>
+        </ol>
+    </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<header xmlns:th="http://www.thymeleaf.org" th:fragment="siteHeader" class="site-header">
+    <div class="site-container site-header__inner">
+        <div class="site-header__main">
+            <a class="site-brand" href="/" aria-label="OKEYDOKEY.SPACE home">
+                OKEYDOKEY.SPACE<span class="site-brand__cursor" aria-hidden="true">_</span>
+            </a>
+
+            <nav class="site-nav" aria-label="Primary navigation">
+                <ul class="site-nav__list">
+                    <li><a class="site-nav__link" href="/" th:attr="aria-current=${currentPage == 'home'} ? 'page' : null">Home</a></li>
+                    <li><a class="site-nav__link" href="/projects" th:attr="aria-current=${currentPage == 'projects'} ? 'page' : null">Projects</a></li>
+                    <li><a class="site-nav__link" href="/journey" th:attr="aria-current=${currentPage == 'journey'} ? 'page' : null">Journey</a></li>
+                    <li><a class="site-nav__link" href="/garden" th:attr="aria-current=${currentPage == 'garden'} ? 'page' : null">Garden</a></li>
+                    <li><a class="site-nav__link" href="/playground" th:attr="aria-current=${currentPage == 'playground'} ? 'page' : null">Playground</a></li>
+                </ul>
+            </nav>
+
+            <button class="mobile-nav__trigger" type="button"
+                    aria-expanded="false" aria-controls="mobile-navigation"
+                    aria-label="Open navigation menu" data-nav-trigger>
+                <span aria-hidden="true">≡</span>
+            </button>
+        </div>
+
+        <p class="site-header__status">
+            <span aria-hidden="true">●</span> Currently building
+        </p>
+    </div>
+
+    <div id="mobile-navigation" class="mobile-nav" data-mobile-nav hidden>
+        <div class="mobile-nav__panel">
+            <div class="mobile-nav__header">
+                <a class="site-brand" href="/" data-nav-link>
+                    OKEYDOKEY.SPACE<span class="site-brand__cursor" aria-hidden="true">_</span>
+                </a>
+                <button class="mobile-nav__close" type="button" aria-label="Close navigation menu" data-nav-close>
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+
+            <nav class="mobile-nav__navigation" aria-label="Mobile navigation">
+                <ul class="mobile-nav__list">
+                    <li><a class="mobile-nav__link" href="/" data-nav-link th:attr="aria-current=${currentPage == 'home'} ? 'page' : null"><span aria-hidden="true">&gt;</span> Home</a></li>
+                    <li><a class="mobile-nav__link" href="/projects" data-nav-link th:attr="aria-current=${currentPage == 'projects'} ? 'page' : null"><span aria-hidden="true">&gt;</span> Projects</a></li>
+                    <li><a class="mobile-nav__link" href="/journey" data-nav-link th:attr="aria-current=${currentPage == 'journey'} ? 'page' : null"><span aria-hidden="true">&gt;</span> Journey</a></li>
+                    <li><a class="mobile-nav__link" href="/garden" data-nav-link th:attr="aria-current=${currentPage == 'garden'} ? 'page' : null"><span aria-hidden="true">&gt;</span> Garden</a></li>
+                    <li><a class="mobile-nav__link" href="/playground" data-nav-link th:attr="aria-current=${currentPage == 'playground'} ? 'page' : null"><span aria-hidden="true">&gt;</span> Playground</a></li>
+                </ul>
+            </nav>
+
+            <p class="mobile-nav__status"><span aria-hidden="true">●</span> Currently building</p>
+        </div>
+    </div>
+</header>

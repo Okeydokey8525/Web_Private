@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Visual design system and pixel UI component reference for OKEYDOKEY.SPACE.">
+    <meta name="robots" content="noindex,nofollow">
+    <title>Style Guide — OKEYDOKEY.SPACE</title>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body id="top" class="site-shell">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div th:replace="~{fragments/header :: siteHeader}"></div>
+
+    <main id="main-content" class="site-main">
+        <header class="style-guide-header">
+            <div class="site-container style-guide-header__copy">
+                <span class="pixel-label">[ INTERNAL / M1 ]</span>
+                <h1 class="type-section-heading">OKEYDOKEY.SPACE STYLE GUIDE</h1>
+                <p class="type-body">A development-only reference for the shared pixel design foundation. This is not the homepage.</p>
+            </div>
+        </header>
+
+        <div class="site-container">
+        <section class="section" aria-labelledby="colors-title">
+            <div class="section-header">
+                <span class="pixel-label">[ 01 / TOKENS ]</span>
+                <h2 id="colors-title" class="type-section-heading">Colors</h2>
+                <p class="type-body">A focused green, white, and near-black palette keeps the system crisp and consistent.</p>
+            </div>
+            <div class="component-grid" role="list">
+                <article class="token-swatch" role="listitem">
+                    <div class="token-swatch__chip token-swatch__chip--white" role="img" aria-label="White color swatch"></div>
+                    <h3 class="type-card-heading">White</h3>
+                    <code>#FFFFFF</code>
+                </article>
+                <article class="token-swatch" role="listitem">
+                    <div class="token-swatch__chip token-swatch__chip--soft" role="img" aria-label="Pale green color swatch"></div>
+                    <h3 class="type-card-heading">Pale green</h3>
+                    <code>#F3FFF7</code>
+                </article>
+                <article class="token-swatch" role="listitem">
+                    <div class="token-swatch__chip token-swatch__chip--green" role="img" aria-label="Primary green color swatch"></div>
+                    <h3 class="type-card-heading">Primary green</h3>
+                    <code>#35C76F</code>
+                </article>
+                <article class="token-swatch" role="listitem">
+                    <div class="token-swatch__chip token-swatch__chip--black" role="img" aria-label="Near black color swatch"></div>
+                    <h3 class="type-card-heading">Near black</h3>
+                    <code>#111111</code>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="type-title">
+            <div class="section-header">
+                <span class="pixel-label">[ 02 / TYPE ]</span>
+                <h2 id="type-title" class="type-section-heading">Typography</h2>
+            </div>
+            <div class="stack">
+                <p class="type-display">PIXEL DISPLAY</p>
+                <h3 class="type-section-heading">Section heading</h3>
+                <p class="type-body">Readable body text uses Inter with a clean system sans-serif fallback. Pixel typography stays focused on display and interface moments.</p>
+                <p class="type-meta">Metadata / 14px / uppercase</p>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="buttons-title">
+            <div class="section-header">
+                <span class="pixel-label">[ 03 / ACTIONS ]</span>
+                <h2 id="buttons-title" class="type-section-heading">Buttons</h2>
+                <p class="type-body">Both variants support keyboard focus, pointer hover, active press, and practical touch targets.</p>
+            </div>
+            <div class="cluster button-group">
+                <a class="pixel-button" href="#cards-title">Primary action</a>
+                <button class="pixel-button pixel-button--secondary" type="button">Secondary action</button>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="cards-title">
+            <div class="section-header">
+                <span class="pixel-label">[ 04 / SURFACES ]</span>
+                <h2 id="cards-title" class="type-section-heading">Cards</h2>
+            </div>
+            <div class="component-grid">
+                <article class="pixel-card">
+                    <h3 class="type-card-heading">Normal card</h3>
+                    <p>White surface, hard border, normal pixel shadow.</p>
+                </article>
+                <article class="pixel-card pixel-card--soft">
+                    <h3 class="type-card-heading">Soft card</h3>
+                    <p>Pale green surface for gentle grouping.</p>
+                </article>
+                <article class="pixel-card pixel-card--green">
+                    <h3 class="type-card-heading">Green card</h3>
+                    <p>Brand surface with strong black contrast.</p>
+                </article>
+                <article class="pixel-card pixel-card--featured">
+                    <h3 class="type-card-heading">Featured card</h3>
+                    <p>Eight-pixel shadow for selected content.</p>
+                </article>
+                <article class="pixel-card pixel-card--small">
+                    <h3 class="type-card-heading">Small card</h3>
+                    <p>Four-pixel shadow for compact surfaces.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="markers-title">
+            <div class="section-header">
+                <span class="pixel-label">[ 05 / MARKERS ]</span>
+                <h2 id="markers-title" class="type-section-heading">Badges and status</h2>
+            </div>
+            <div class="stack">
+                <div class="cluster" role="group" aria-label="Technology badges">
+                    <span class="pixel-badge pixel-badge--green">[ Java ]</span>
+                    <span class="pixel-badge">[ Python ]</span>
+                    <span class="pixel-badge">[ SQL ]</span>
+                    <span class="pixel-badge">[ NoSQL ]</span>
+                </div>
+                <div class="cluster" role="group" aria-label="Status indicators">
+                    <span class="status-indicator status-indicator--active">● Active</span>
+                    <span class="status-indicator status-indicator--current">● Current</span>
+                    <span class="status-indicator status-indicator--growing">◐ Growing</span>
+                    <span class="status-indicator status-indicator--experimental">◇ Experimental</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="window-title">
+            <div class="section-header">
+                <span class="pixel-label">[ 06 / FRAME ]</span>
+                <h2 id="window-title" class="type-section-heading">Pixel window and divider</h2>
+            </div>
+            <div class="pixel-window">
+                <div class="pixel-window__bar">
+                    <span>[ PREVIEW.TXT ]</span>
+                    <span class="pixel-window__controls" aria-hidden="true">□ ×</span>
+                </div>
+                <div class="pixel-window__content">
+                    <p class="type-meta">Dummy preview content</p>
+                </div>
+            </div>
+            <hr class="pixel-divider">
+            <p class="type-meta">End of component reference</p>
+        </section>
+        </div>
+    </main>
+
+    <div th:replace="~{fragments/footer :: siteFooter}"></div>
+    <script src="/js/main.js"></script>
+</body>
+</html>

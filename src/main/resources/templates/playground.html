@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive experiments from Okeydokey, including Pixel Brush and Dither Machine.">
+    <meta property="og:site_name" content="OKEYDOKEY.SPACE">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Playground — OKEYDOKEY.SPACE">
+    <meta property="og:description" content="Interactive experiments from Okeydokey, including Pixel Brush and Dither Machine.">
+    <title>Playground — OKEYDOKEY.SPACE</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/playground.css">
+</head>
+<body id="top" class="site-shell">
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <div th:replace="~{fragments/header :: siteHeader}"></div>
+
+    <main id="main-content" class="site-main playground-page">
+        <header class="playground-page__intro">
+            <div class="site-container playground-page__intro-grid">
+                <div>
+                    <span class="pixel-label">[ PLAYGROUND ]</span>
+                    <h1 class="playground-page__title">BREAK.<br>BUILD.<br>PLAY.</h1>
+                </div>
+                <div class="playground-page__copy">
+                    <p>Small experiments with interaction,<br>pixels and visual ideas.</p>
+                    <span class="playground-page__count">02 LABS_</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="playground-page__labs">
+            <div class="site-container">
+                <section class="playground-lab playground-lab--brush pixel-card"
+                         aria-labelledby="pixel-brush-title" data-playground-lab="pixel-brush">
+                    <div class="playground-lab__content">
+                        <div class="playground-lab__meta">
+                            <span class="pixel-label">LAB_001</span>
+                            <span class="status-indicator status-indicator--active">
+                                <span aria-hidden="true">&#9679;</span> STABLE
+                            </span>
+                        </div>
+                        <h2 id="pixel-brush-title" class="playground-lab__title">PIXEL_BRUSH_</h2>
+                        <p class="playground-lab__description">Draw a tiny pixel trail with your pointer.</p>
+                        <p id="pixel-brush-instruction" class="playground-lab__instruction">
+                            DRAG_TO_DRAW_ POINTER_OR_TOUCH_REQUIRED_
+                        </p>
+                        <button class="pixel-button pixel-button--secondary" type="button"
+                                aria-label="Clear Pixel Brush" data-pixel-brush-clear>
+                            CLEAR
+                        </button>
+                    </div>
+
+                    <div class="pixel-brush">
+                        <canvas class="pixel-brush__canvas" data-pixel-brush-canvas
+                                aria-label="Pixel Brush drawing area"
+                                aria-describedby="pixel-brush-instruction">
+                            Interactive Pixel Brush drawing area. Use a pointer or touch input to draw.
+                        </canvas>
+                    </div>
+                </section>
+
+                <section class="playground-lab playground-lab--dither pixel-card"
+                         aria-labelledby="dither-machine-title" data-playground-lab="dither-machine">
+                    <div class="playground-lab__content">
+                        <div class="playground-lab__meta">
+                            <span class="pixel-label">LAB_002</span>
+                            <span class="status-indicator status-indicator--experimental">
+                                <span aria-hidden="true">&#9671;</span> EXPERIMENTAL
+                            </span>
+                        </div>
+                        <h2 id="dither-machine-title" class="playground-lab__title">DITHER_MACHINE_</h2>
+                        <p class="playground-lab__description">Explore a lightweight green-and-black dither pattern.</p>
+
+                        <div class="dither-machine__controls">
+                            <div class="dither-machine__control">
+                                <div class="dither-machine__control-label">
+                                    <label for="dither-density">DENSITY_</label>
+                                    <output id="dither-density-output" for="dither-density"
+                                            data-dither-density-output>4</output>
+                                </div>
+                                <input id="dither-density" type="range" min="1" max="8" value="4"
+                                       aria-describedby="dither-density-output"
+                                       data-dither-density>
+                            </div>
+                            <div class="dither-machine__control">
+                                <div class="dither-machine__control-label">
+                                    <label for="dither-scale">SCALE_</label>
+                                    <output id="dither-scale-output" for="dither-scale"
+                                            data-dither-scale-output>20</output>
+                                </div>
+                                <input id="dither-scale" type="range" min="8" max="32" step="2" value="20"
+                                       aria-describedby="dither-scale-output"
+                                       data-dither-scale>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dither-machine__output" data-dither-output aria-hidden="true"></div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <div th:replace="~{fragments/footer :: siteFooter}"></div>
+    <script src="/js/main.js" defer></script>
+    <script src="/js/playground.js" defer></script>
+</body>
+</html>
