@@ -1,5 +1,5 @@
 .playground-section {
-    padding-block: var(--space-9);
+    padding-block: var(--space-8);
     overflow: hidden;
     color: var(--color-bg);
     background: var(--color-text);
@@ -15,7 +15,7 @@
 }
 
 .playground-section__header {
-    margin-block-end: var(--space-8);
+    margin-block-end: var(--space-7);
 }
 
 .playground-section__title,
@@ -34,8 +34,12 @@
     line-height: 1.7;
 }
 
+.playground-section__copy {
+    font-weight: 500;
+}
+
 .playground-section .pixel-label {
-    color: var(--color-green-300);
+    color: var(--color-text);
 }
 
 .playground-preview {
@@ -123,7 +127,7 @@
 .playground-section__action {
     display: flex;
     justify-content: center;
-    margin-block-start: var(--space-8);
+    margin-block-start: var(--space-7);
 }
 
 .playground-section__action .pixel-button {

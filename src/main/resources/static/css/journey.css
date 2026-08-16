@@ -1,5 +1,5 @@
 .journey-section {
-    padding-block: var(--space-9);
+    padding-block: var(--space-8);
     overflow: hidden;
     color: var(--color-bg);
     background: var(--color-text);
@@ -11,7 +11,7 @@
     grid-template-columns: minmax(0, 1.3fr) minmax(18rem, 0.7fr);
     gap: var(--space-7);
     align-items: end;
-    margin-block-end: var(--space-8);
+    margin-block-end: var(--space-7);
 }
 
 .journey-section__title,
@@ -30,8 +30,12 @@
     line-height: 1.7;
 }
 
+.journey-section__copy {
+    font-weight: 500;
+}
+
 .journey-section .pixel-label {
-    color: var(--color-green-300);
+    color: var(--color-text);
 }
 
 .journey-section__action,
@@ -39,6 +43,10 @@
     display: flex;
     justify-content: center;
     margin-block-start: var(--space-8);
+}
+
+.journey-section__action {
+    margin-block-start: var(--space-7);
 }
 
 .journey-section__action .pixel-button {
@@ -186,6 +194,7 @@
     min-width: 0;
     padding: var(--space-5);
     background: var(--color-bg);
+    color: var(--color-text);
     overflow-wrap: anywhere;
 }
 

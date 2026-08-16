@@ -1,5 +1,5 @@
 .garden-section {
-    padding-block: var(--space-9);
+    padding-block: var(--space-8);
     overflow: hidden;
     background: var(--color-bg);
     border-top: var(--border);
@@ -14,7 +14,7 @@
 }
 
 .garden-section__header {
-    margin-block-end: var(--space-8);
+    margin-block-end: var(--space-7);
 }
 
 .garden-section__title,
@@ -31,6 +31,10 @@
     margin: 0;
     font-size: var(--font-size-body);
     line-height: 1.7;
+}
+
+.garden-section__copy {
+    font-weight: 500;
 }
 
 .garden-meta {
@@ -61,12 +65,14 @@
     min-width: 0;
     flex-direction: column;
     padding: var(--space-5);
+    color: var(--color-text);
     overflow-wrap: anywhere;
 }
 
 .garden-card--featured {
     grid-column: 1 / span 8;
     grid-row: span 2;
+    align-self: start;
     padding: var(--space-6);
     background: var(--color-green-500);
     border-width: 3px;
@@ -229,6 +235,10 @@
     display: flex;
     justify-content: center;
     margin-block-start: var(--space-8);
+}
+
+.garden-section__action {
+    margin-block-start: var(--space-7);
 }
 
 .garden-page {
