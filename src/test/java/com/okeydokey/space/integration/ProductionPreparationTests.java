@@ -87,6 +87,32 @@ class ProductionPreparationTests {
 	}
 
 	@Test
+	void faviconAssetsAndHomepageDeclarationsAreAvailable() throws Exception {
+		for (String path : new String[] {
+				"/favicon.png",
+				"/favicon-16x16.png",
+				"/favicon-32x32.png",
+				"/apple-touch-icon.png"
+		}) {
+			mockMvc.perform(get(path))
+					.andExpect(status().isOk())
+					.andExpect(content().contentTypeCompatibleWith(MediaType.IMAGE_PNG));
+		}
+
+		mockMvc.perform(get("/favicon.ico"))
+				.andExpect(status().isOk());
+
+		mockMvc.perform(get("/"))
+				.andExpect(status().isOk())
+				.andExpect(content().string(containsString(
+						"<link rel=\"icon\" type=\"image/png\" sizes=\"32x32\" href=\"/favicon-32x32.png\">")))
+				.andExpect(content().string(containsString(
+						"<link rel=\"icon\" type=\"image/png\" sizes=\"16x16\" href=\"/favicon-16x16.png\">")))
+				.andExpect(content().string(containsString(
+						"<link rel=\"apple-touch-icon\" sizes=\"180x180\" href=\"/apple-touch-icon.png\">")));
+	}
+
+	@Test
 	void robotsAndPageMetadataAreProductionReadyWithoutInventedDomainValues() throws Exception {
 		String robots = mockMvc.perform(get("/robots.txt"))
 				.andExpect(status().isOk())
