@@ -394,6 +394,8 @@
     .contact-card__email {
         padding-block: var(--space-7);
         font-size: clamp(1.4rem, 7vw, 2rem);
+        overflow-wrap: anywhere;
+        white-space: normal;
     }
 
     .contact-card__actions {

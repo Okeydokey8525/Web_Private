@@ -623,11 +623,13 @@
     margin-block: auto;
     padding-block: var(--space-6);
     font-family: var(--font-display);
-    font-size: clamp(1.75rem, 4vw, 4rem);
+    font-size: clamp(1.75rem, 2.65vw, 2.75rem);
     font-weight: 700;
     letter-spacing: -0.04em;
-    line-height: 1;
-    overflow-wrap: anywhere;
+    line-height: 1.05;
+    overflow-wrap: normal;
+    word-break: normal;
+    white-space: nowrap;
     text-decoration-thickness: 3px;
     text-underline-offset: 0.18em;
 }
