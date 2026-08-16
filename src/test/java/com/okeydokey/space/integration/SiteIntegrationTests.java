@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.header;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import java.util.HashSet;
@@ -47,6 +48,13 @@ class SiteIntegrationTests {
 				"/playground/pixel-brush")) {
 			mockMvc.perform(get(route)).andExpect(status().isNotFound());
 		}
+	}
+
+	@Test
+	void defaultProfileDoesNotSendStrictTransportSecurity() throws Exception {
+		mockMvc.perform(get("/"))
+				.andExpect(status().isOk())
+				.andExpect(header().doesNotExist("Strict-Transport-Security"));
 	}
 
 	@Test

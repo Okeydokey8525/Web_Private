@@ -2,7 +2,7 @@
 
 OKEYDOKEY.SPACE is a personal portfolio for a computer science student and
 developer interested in web development, AI, computer vision and databases.
-The V1 application is production-prepared but not yet deployed.
+Live site: <https://okeydokey-space.onrender.com>
 
 ## Features
 
@@ -75,7 +75,7 @@ Open <http://localhost:8080/>.
 .\mvnw.cmd test
 ```
 
-The current automated suite contains 31 tests covering controllers, services,
+The current automated suite contains 34 tests covering controllers, services,
 site integration and production preparation.
 
 ## Production build
@@ -91,10 +91,12 @@ caching for versionless static assets, safe error-detail settings and custom
 404/5xx pages. Spring Boot DevTools remains local-development-only and is
 excluded from the executable JAR.
 
-Production responses include basic application-level security headers. HSTS,
-a strict Content Security Policy, canonical URLs, `og:url`, a sitemap and
-forwarded-header configuration remain deferred until the real HTTPS host and
-deployment platform are known.
+Production responses include basic application-level security headers,
+including `Strict-Transport-Security: max-age=31536000` when the `prod` profile
+is active. Canonical URLs, `og:url`, `sitemap.xml`, the robots sitemap
+declaration and native forwarded-header handling are configured for the live
+Render origin. A strict Content Security Policy remains deferred while the
+site uses external Google Fonts.
 
 ## Accessibility
 
@@ -116,11 +118,16 @@ intentional production asset.
 
 ## Deployment
 
-Deployment to a Render Web Service is prepared but remains pending until the
-service is created. The service uses the repository-root `Dockerfile`, the
-`main` branch and the `prod` Spring profile. Render supplies the application
-port through its `PORT` environment variable; local production runs fall back
-to port 8080.
+Live site: <https://okeydokey-space.onrender.com>
+
+- Hosting: Render Free Web Service
+- Runtime: Docker
+- Region: Singapore
+- Branch: `main`
+- Spring profile: `prod`
+
+Render supplies the application port through its `PORT` environment variable;
+local production runs fall back to port 8080.
 
 Required Render environment variable:
 
@@ -128,5 +135,11 @@ Required Render environment variable:
 SPRING_PROFILES_ACTIVE=prod
 ```
 
-No live URL, custom domain, CI/CD pipeline or persistent service is claimed
-until the Render deployment succeeds.
+Render Free may spin down during inactivity, so the first request after an idle
+period can be slower. This is hosting-tier behavior rather than an application
+error.
+
+The live Render URL is the preferred canonical origin. If a custom domain is
+added later, update canonical URLs, `og:url`, `sitemap.xml` and the sitemap URL
+in `robots.txt` together. Search engine indexing is not guaranteed by these
+crawl and index signals.

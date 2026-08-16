@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://okeydokey-space.onrender.com/sitemap.xml
